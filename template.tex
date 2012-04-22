@@ -1,0 +1,81 @@
+\documentclass[12pt, oneside, letterpaper]{apa6e}
+\usepackage{apacite} % This is not done automatically!
+
+% #### THE FOLLOWING SECTION:
+%		Edit the following section as necessary
+\makeatletter
+\def\authornote#1{} % Comment out to use author note
+\def\abstract#1{}	% Comment out to use abstract
+\renewcommand{\maketitle}{%
+\thispagestyle{titlepage}%
+\vspace*{2in}%
+\Centering\@title\\\@author%
+\vfill%
+\ifdefined%
+	\apaSIXe@leavefloats{\large\textbf{\textit{A helpful reminder, 
+		courtesy \texttt{apa6e.cls}:} Figures and tables are 
+		currently mixed in with your text for easier reading. 
+		Don't forget to remove the \texttt{leavefloats} 
+		option before you submit!}\vfill}%
+	\fi
+%Author Note\par\RaggedRight\@authornote%		This section does the abstract 
+%\mspart{Abstract}%						and author note. Simply 
+%\@abstract%								uncomment to use. :)
+\newpage%
+%\tableofcontents%				Uncomment these two lines  
+%\newpage%						to use toc.
+\Centering\@title\\%
+\RaggedRight%
+}
+\makeatother
+% #### END GROSSECTION
+
+\title{This will be the title}
+\shorttitle{This will be the running head}
+\author{
+		%COURSE CODE	\\% 		If for school
+		Author Name	\\%		NAME
+		\today		\\%		DATE, if for school
+		UNIVERSITY	\\%		ORGANIZATION
+		}
+
+\begin{document}
+\maketitle
+
+\indent It will be necessary to type that indent command for the first paragraph, but every other paragraph will be fine (better, even) without it. 
+
+\subsection{Sections}
+
+For sections, you actually have to use ``subsection.'' This is because of the weird way in which apa6e.cls formats section heads. It is dumb and wierd, but whatever. 
+
+\subsubsection{Subsections}
+
+For subsections, use ``subsubsection.'' (Also, don't forget the special way you have to make ``quotes!'')
+
+\paragraph{The next level down}
+
+The next level down is ``paragraph.'' Paragraph headings do not appear in the TOC with current settings, but that can be changed with (textbackslash is the escape for a backslash): 
+\begin{quote}
+		\texttt{\textbackslash setcounter\{secnumdepth\}\{3\}}
+\end{quote}
+%\endquote 
+I hope you don't need to go any further down than paragraph. 
+
+\subsection{Citations and Beyond}
+
+For a citation, type this \cite{Gill}.  The way to cite a reference you have already used is like so (\citeauthor{Gill}).  If you want to use the author's name in the sentence and cite at the same time, do it this way, like \citeA{Hamlet}.  To ensure that a reference is included in the bibliography even if you didn't use it, use nocite\nocite{Companion, Simpson, Er01, OnlineSource}.  Isn't this fun?
+
+Following this will be the bibliography. 
+
+\bibliographystyle{apacite}
+\bibliography{examples}			% Name of .bib doc goes here, minus the .bib ext.
+
+% The following is for any appendices. Comment out or remove if no appendices
+%\newpage
+%
+%\section{Appendix A: The Content of the Appendix}
+%
+%If you have appendices, put them here. 
+
+\end{document}
+
